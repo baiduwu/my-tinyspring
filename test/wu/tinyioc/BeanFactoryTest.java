@@ -10,15 +10,15 @@ public class BeanFactoryTest {
 
 	@Test
 	public void test() {
-		//初始化bean工厂
+		//鐢熸垚bean宸ュ巶
 		BeanFactory beanFactory = new BeanFactory();
 		
 		BeanDefinition beanDefinition = new BeanDefinition(new HelloWorldService());
 		
-		//注入bean
+		//娉ㄥ叆bean
 		beanFactory.registerBeanDefinition("helloWorldService", beanDefinition);
 		
-		//获取bean
+		//鑾峰彇bean
 		HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
 		
 		helloWorldService.helloWorld();

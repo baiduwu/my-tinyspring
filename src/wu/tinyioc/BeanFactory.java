@@ -8,7 +8,7 @@ public class BeanFactory {
 	private Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>();
 
 	/**
-	 * 注册bean对象到指定的key中
+	 * desc 娉ㄥ唽bean
 	 * @param name
 	 * @param beanDefinition
 	 */
@@ -17,7 +17,7 @@ public class BeanFactory {
 	}
 	
 	/**
-	 * desc 获取指定key的bean对象
+	 * desc  鑾峰彇Bean
 	 * @param name
 	 * @return
 	 */
