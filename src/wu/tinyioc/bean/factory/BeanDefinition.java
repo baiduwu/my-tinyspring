@@ -1,5 +1,7 @@
 package wu.tinyioc.bean.factory;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 public class BeanDefinition {
 
 	private Object bean;
@@ -7,7 +9,7 @@ public class BeanDefinition {
 	
 	private String beanClassName;
 	
-	private PropertValues propertValues;
+	private PropertValues propertValues = new PropertValues();
 	
 	
 
