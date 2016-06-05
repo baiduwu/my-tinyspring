@@ -3,6 +3,17 @@ package wu.tinyioc.bean.factory;
 public class BeanDefinition {
 
 	private Object bean;
+    private Class beanClass;
+	
+	private String beanClassName;
+	
+	private PropertValues propertValues;
+	
+	
+
+	public BeanDefinition(){
+		
+	}
 	
 	public Object getBean() {
 		return bean;
@@ -33,14 +44,18 @@ public class BeanDefinition {
 			e.printStackTrace();
 		}
 	}
-
-	private Class beanClass;
 	
-	private String beanClassName;
-	
-	public BeanDefinition(){
-		
+	public PropertValues getPropertValues() {
+		return propertValues;
 	}
+	
+	public void setPropertValues(PropertValues propertValues) {
+		this.propertValues = propertValues;
+	}
+	
+	
+
+	
 	
 
 }
