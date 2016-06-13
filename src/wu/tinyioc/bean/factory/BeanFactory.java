@@ -3,13 +3,13 @@ package wu.tinyioc.bean.factory;
 import sun.security.krb5.internal.crypto.DesCbcCrcEType;
 
 /**
- * desc ¶¨Òåbean¹¤³§µÄ½Ó¿Ú
+ * desc ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½ï¿½ï¿½ï¿½Ä½Ó¿ï¿½
  * @author wuzhiqiang
- * @date 2016-6-2 ÏÂÎç11:13:23
+ * @date 2016-6-2 ï¿½ï¿½ï¿½ï¿½11:13:23
  */
 public interface BeanFactory {
 
 	Object getBean(String name);
-	void registerBeanDefinition(String name, BeanDefinition beanDefinition);
+	void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception;
 
 }

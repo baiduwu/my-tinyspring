@@ -49,6 +49,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
 	private void registerBeanDefinitions(Document doc) {
 		Element root = doc.getDocumentElement();
+		System.out.println();
 		parseBeanDefinitions(root);
 		
 	}
@@ -89,7 +90,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 				System.out.println(value);
 				System.out.println(beanDefinition);
 				PropertyValue protest = new PropertyValue(name, value);
-				System.out.println(protest);
+			
 				beanDefinition.getPropertValues().addPropertyValue(protest);
 			}
 		}

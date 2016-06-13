@@ -1,5 +1,7 @@
 package wu.tinyioc.bean.factory;
 
+
+
 import java.util.Map;
 
 import org.junit.Test;
@@ -14,6 +16,7 @@ public class BeanFactoryTestStep4 {
 
 	@Test
 	public void test() throws Exception{
+		System.out.println("are you ok?");
 		//1/ 读取配置
 		XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
 		xmlBeanDefinitionReader.loadBeanDefinitions("wu.xml");
@@ -26,6 +29,8 @@ public class BeanFactoryTestStep4 {
 		
 		//3/获取bean
 		HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
+		
+		
 		helloWorldService.helloWorld();
 	
 }

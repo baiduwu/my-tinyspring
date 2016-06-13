@@ -8,25 +8,16 @@ import java.util.Iterator;
 public class AutowireCapableBeanFactory extends AbstractBeanFactory {
 
 	@Override
-	protected Object doCreateBean(BeanDefinition beanDefinition) {
-		
-		Object beanObject;
-		try {
-			beanObject = beanDefinition.getBeanClass().newInstance();
-			return beanObject;
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return null;
+	protected Object doCreateBean(BeanDefinition beanDefinition) throws Exception {
+		System.out.println("doCreateBean");
+		Object bean = createBeanInstance(beanDefinition);
+		applyPropertyValues(bean, beanDefinition);
+		return bean;
 	}
 	
 	
 	protected Object createBeanInstance(BeanDefinition beanDefinition) throws Exception {
+		System.out.println("createBeanInstance");
 		return beanDefinition.getBeanClass().newInstance();
 	}
 
