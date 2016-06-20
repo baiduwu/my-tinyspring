@@ -1,18 +1,18 @@
 package wu.tinyioc.bean.factory;
 
-
-
 import java.util.Map;
 
 import org.junit.Test;
 
+import src.wu.io.ResourceLoader;
+import src.wu.tinyioc.bean.factory.AutowireCapableBeanFactory;
+import src.wu.tinyioc.bean.factory.BeanDefinition;
+import src.wu.tinyioc.bean.factory.AbstractBeanFactory;
+import src.wu.xml.XmlBeanDefinitionReader;
+import test.wu.tinyioc.bean.factory.HelloWorldService;
 
 
-import wu.io.ResourceLoader;
-import wu.tinyioc.HelloWorldService;
-import wu.xml.XmlBeanDefinitionReader;
-
-public class BeanFactoryTestStep4 {
+public class CopyOfBeanFactoryTestStep5 {
 
 	@Test
 	public void test() throws Exception{
@@ -22,10 +22,14 @@ public class BeanFactoryTestStep4 {
 		xmlBeanDefinitionReader.loadBeanDefinitions("wu.xml");
 		
 		//2/初始化BeanFactory 并且注册bean
-		BeanFactory beanFactory = new AutowireCapableBeanFactory();
+		AbstractBeanFactory beanFactory = new AutowireCapableBeanFactory();
 		for(Map.Entry<String, BeanDefinition> beanDefiEntry : xmlBeanDefinitionReader.getRegistry().entrySet()){
 			beanFactory.registerBeanDefinition(beanDefiEntry.getKey(), beanDefiEntry.getValue());
 		}
+		
+		//3/ 初始化bean
+		
+		beanFactory.preInstantiateSingletons();
 		
 		//3/获取bean
 		HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");

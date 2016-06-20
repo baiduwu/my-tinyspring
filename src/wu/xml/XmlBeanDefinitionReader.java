@@ -1,4 +1,4 @@
-package wu.xml;
+package src.wu.xml;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,13 +12,16 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import src.wu.tinyioc.AbstractBeanDefinitionReader;
+import src.wu.io.ResourceLoader;
+import src.wu.tinyioc.bean.factory.PropertyValue;
 
 
 
-import wu.io.ResourceLoader;
-import wu.tinyioc.AbstractBeanDefinitionReader;
-import wu.tinyioc.bean.factory.BeanDefinition;
-import wu.tinyioc.bean.factory.PropertyValue;
+import src.wu.io.ResourceLoader;
+import src.wu.tinyioc.AbstractBeanDefinitionReader;
+import src.wu.tinyioc.bean.factory.BeanDefinition;
+import src.wu.tinyioc.bean.factory.PropertyValue;
 
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
@@ -27,7 +30,6 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public void loadBeanDefinitions(String location) throws Exception {
 		InputStream inputStream = getResourceLoader().getResource(location).getInputStream();
 		doLoadBeanDefinitions(inputStream);

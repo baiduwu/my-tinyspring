@@ -1,4 +1,4 @@
-package wu.tinyioc.bean.factory;
+package src.wu.tinyioc.bean.factory;
 
 import java.lang.reflect.Field;
 import java.util.Iterator;

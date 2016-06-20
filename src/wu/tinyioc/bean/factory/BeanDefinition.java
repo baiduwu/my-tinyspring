@@ -1,6 +1,5 @@
-package wu.tinyioc.bean.factory;
+package src.wu.tinyioc.bean.factory;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class BeanDefinition {
 

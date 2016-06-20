@@ -1,4 +1,4 @@
-package wu.io;
+package src.wu.io;
 
 import java.io.IOException;
 import java.io.InputStream;

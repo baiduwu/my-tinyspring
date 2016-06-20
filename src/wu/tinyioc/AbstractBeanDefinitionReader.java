@@ -1,10 +1,10 @@
-package wu.tinyioc;
+package src.wu.tinyioc;
 
 import java.util.HashMap;
 import java.util.Map;
-import wu.tinyioc.bean.factory.BeanDefinition;
 
-import wu.io.ResourceLoader;
+import src.wu.io.ResourceLoader;
+import src.wu.tinyioc.bean.factory.BeanDefinition;
 
 public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader {
 

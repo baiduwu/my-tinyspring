@@ -1,15 +1,17 @@
-package wu.tinyioc.bean.factory;
+package test.wu.tinyioc.bean.factory;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import wu.tinyioc.HelloWorldService;
+import src.wu.tinyioc.bean.factory.AutowireCapableBeanFactory;
+import src.wu.tinyioc.bean.factory.BeanDefinition;
+import src.wu.tinyioc.bean.factory.BeanFactory;
 
 public class BeanFactoryTest {
 
 	@Test
-	public void test() {
+	public void test() throws Exception {
 		//初始化beanFactory
 		BeanFactory beanFactory = new AutowireCapableBeanFactory();
 		
@@ -17,7 +19,7 @@ public class BeanFactoryTest {
 		
 		//注入bean  此时HelloWorldService 对象并没有new
 		BeanDefinition beanDefinition = new BeanDefinition();
-		beanDefinition.setBeanClassName("wu.tinyioc.HelloWorldService");
+		beanDefinition.setBeanClassName("test.wu.tinyioc.bean.factory.HelloWorldService");
 		//registerBeanDefinition 中加载doCreate方法生成真正的对象
 		beanFactory.registerBeanDefinition("helloWorldServie", beanDefinition);
 		

@@ -1,4 +1,4 @@
-package wu.io;
+package src.wu.io;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,6 @@ public class UrlResource implements Resource {
 		this.url = url;
 	}
 
-	@Override
 	public InputStream getInputStream() throws IOException {
 		// TODO Auto-generated method stub
 		URLConnection urlConnection = url.openConnection();

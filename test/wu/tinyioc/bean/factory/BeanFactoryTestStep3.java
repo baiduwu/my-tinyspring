@@ -1,19 +1,24 @@
-package wu.tinyioc.bean.factory;
+package test.wu.tinyioc.bean.factory;
 
 import org.junit.Test;
 
-import wu.tinyioc.HelloWorldService;
+import src.wu.tinyioc.bean.factory.AutowireCapableBeanFactory;
+import src.wu.tinyioc.bean.factory.BeanDefinition;
+import src.wu.tinyioc.bean.factory.BeanFactory;
+import src.wu.tinyioc.bean.factory.PropertValues;
+import src.wu.tinyioc.bean.factory.PropertyValue;
+
 
 public class BeanFactoryTestStep3 {
 
 	@Test
-	public void test(){
+	public void test() throws Exception{
 		//1 初始化beanfactory
 		BeanFactory beanFactory = new AutowireCapableBeanFactory();
 		
 		//2/ bean定义
 		BeanDefinition beanDefinition = new BeanDefinition();
-		beanDefinition.setBeanClassName("wu.tinyioc.HelloWorldService");
+		beanDefinition.setBeanClassName("test.wu.tinyioc.bean.factory.HelloWorldService");
 		
 		//3、 设置属性
 		PropertValues propertyValues = new PropertValues();

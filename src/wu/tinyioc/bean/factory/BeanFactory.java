@@ -1,6 +1,5 @@
-package wu.tinyioc.bean.factory;
+package src.wu.tinyioc.bean.factory;
 
-import sun.security.krb5.internal.crypto.DesCbcCrcEType;
 
 /**
  * desc ����bean�����Ľӿ�

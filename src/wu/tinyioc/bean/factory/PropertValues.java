@@ -1,4 +1,4 @@
-package wu.tinyioc.bean.factory;
+package src.wu.tinyioc.bean.factory;
 
 import java.util.ArrayList;
 import java.util.List;
