@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import sun.org.mozilla.javascript.internal.ast.NewExpression;
 
 
 
@@ -19,19 +18,30 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 	private final List<String> beanDefinitionNames = new ArrayList<String>();
   
 
-	public Object getBean(String name) {
-		// TODO Auto-generated method stub
-		return beanDefinitionMap.get(name).getBean();
+	@Override
+	public Object getBean(String name) throws Exception {
+
+ 
+		BeanDefinition beanDefinition = beanDefinitionMap.get(name);
+		if(beanDefinition == null){
+			throw new IllegalArgumentException("NO Bean named" + name + "is defined");
+		}
+		Object bean = beanDefinition.getBean();
+		if(bean == null){
+			bean = doCreateBean(beanDefinition);
+		}
+		return bean;
 	}
 
+	@Override
 	public void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception {
-		System.out.println("registerBeanDefinition");
-		Object bean = doCreateBean(beanDefinition);
-		beanDefinition.setBean(bean);
+		//System.out.println("registerBeanDefinition");
+
 		beanDefinitionMap.put(name, beanDefinition);
+		beanDefinitionNames.add(name);
 	}
 	
-	public void preInstantiateSingletons(){
+	public void preInstantiateSingletons() throws Exception{
 		for(Iterator it = this.beanDefinitionNames.iterator(); it.hasNext();){
 			String beanName = (String) it.next();
 			getBean(beanName);

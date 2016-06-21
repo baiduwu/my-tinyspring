@@ -6,7 +6,8 @@ public class HelloWorldService {
     private OutputService outputService;
 
     public void helloWorld(){
-        outputService.output(text);
+         //outputService.output(text);
+    	System.out.println("china is ok!");
     }
 
     public void setText(String text) {

@@ -13,6 +13,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import src.wu.tinyioc.AbstractBeanDefinitionReader;
+import src.wu.tinyioc.BeanReference;
 import src.wu.io.ResourceLoader;
 import src.wu.tinyioc.bean.factory.PropertyValue;
 
@@ -51,7 +52,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
 	private void registerBeanDefinitions(Document doc) {
 		Element root = doc.getDocumentElement();
-		System.out.println();
+		//System.out.println();
 		parseBeanDefinitions(root);
 		
 	}
@@ -88,12 +89,21 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 				
 				String name = propertyElement.getAttribute("name");
 				String value = propertyElement.getAttribute("value");
-				System.out.println(name);
+				/*System.out.println(name);
 				System.out.println(value);
-				System.out.println(beanDefinition);
-				PropertyValue protest = new PropertyValue(name, value);
+				System.out.println(beanDefinition);*/
+				if(value != null && value.length()>0){
+					beanDefinition.getPropertValues().addPropertyValue(new PropertyValue(name, value));
+				}else {
+					String ref = propertyElement.getAttribute("ref");
+					if(ref == null || ref.length() == 0){
+						throw new IllegalArgumentException("Configuration problem: <property> element for property '"
+								+ name + "' must specify a ref or value");
+					}
+					BeanReference beanReference = new BeanReference(ref);
+					beanDefinition.getPropertValues().addPropertyValue(new PropertyValue(name, beanReference));
+				}
 			
-				beanDefinition.getPropertValues().addPropertyValue(protest);
 			}
 		}
 		

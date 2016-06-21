@@ -9,7 +9,7 @@ import src.wu.tinyioc.bean.factory.AutowireCapableBeanFactory;
 import src.wu.tinyioc.bean.factory.BeanDefinition;
 import src.wu.tinyioc.bean.factory.BeanFactory;
 import src.wu.xml.XmlBeanDefinitionReader;
-import test.wu.tinyioc.bean.factory.HelloWorldService;
+import test.wu.tinyioc.bean.factory.HelloWorldServicePro;;
 
 
 public class BeanFactoryTestStep4 {
@@ -30,7 +30,7 @@ public class BeanFactoryTestStep4 {
 		
 		
 		//3获取bean
-		HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
+		HelloWorldServicePro helloWorldService = (HelloWorldServicePro) beanFactory.getBean("helloWorldServicePro");
 		
 		
 		helloWorldService.helloWorld();

@@ -12,8 +12,10 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.spri
 <property name="helloWorldService" ref="helloWorldService"></property>
 </bean>
 
+
 <bean name="helloWorldService" class="test.wu.tinyioc.bean.factory.HelloWorldService">
-<property name="text" value="Hello world, nice to meet you "></property>
+<property name="text" value="Hello world!"></property>
 <property name="outputService" ref="outputService"></property>
 </bean>
+
 </beans>

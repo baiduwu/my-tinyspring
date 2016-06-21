@@ -12,7 +12,7 @@ public class PropertValues {
 	public PropertValues(){}
 	
 	public void addPropertyValue(PropertyValue pv) {
-		System.out.print("heh");
+		//System.out.print("heh");
 		this.propertyValueList.add(pv);
 	}
 	
