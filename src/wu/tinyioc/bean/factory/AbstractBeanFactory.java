@@ -18,10 +18,8 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 	private final List<String> beanDefinitionNames = new ArrayList<String>();
   
 
-	@Override
 	public Object getBean(String name) throws Exception {
 
- 
 		BeanDefinition beanDefinition = beanDefinitionMap.get(name);
 		if(beanDefinition == null){
 			throw new IllegalArgumentException("NO Bean named" + name + "is defined");
@@ -33,7 +31,6 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 		return bean;
 	}
 
-	@Override
 	public void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception {
 		//System.out.println("registerBeanDefinition");
 
