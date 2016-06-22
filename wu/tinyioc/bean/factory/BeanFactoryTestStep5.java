@@ -12,7 +12,7 @@ import src.wu.xml.XmlBeanDefinitionReader;
 import test.wu.tinyioc.bean.factory.HelloWorldService;
 
 
-public class CopyOfBeanFactoryTestStep5 {
+public class BeanFactoryTestStep5 {
 
 	@Test
 	public void test() throws Exception{
