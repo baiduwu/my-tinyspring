@@ -7,9 +7,9 @@ public class TargetSource {
 	private Object target;
 
 	public TargetSource( Object target, Class<?> targeatClass) {
-
-		this.targeatClass = targeatClass;
 		this.target = target;
+		this.targeatClass = targeatClass;
+		
 	}
 
 	public Class getTargeatClass() {
