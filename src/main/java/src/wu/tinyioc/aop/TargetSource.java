@@ -2,17 +2,17 @@ package src.wu.tinyioc.aop;
 
 public class TargetSource {
 
-	private Class targeatClass;
+	private Class<?>[] targeatClass;
 	
 	private Object target;
 
-	public TargetSource( Object target, Class<?> targeatClass) {
+	public TargetSource( Object target, Class<?>[] classes) {
+
+		this.targeatClass = classes;
 		this.target = target;
-		this.targeatClass = targeatClass;
-		
 	}
 
-	public Class getTargeatClass() {
+	public Class<?>[] getTargeatClass() {
 		return targeatClass;
 	}
 

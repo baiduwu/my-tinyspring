@@ -72,7 +72,7 @@ public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodM
 		return this;
 	}
 
-	public MethodMatcher gerMethodmatcher() {
+	public MethodMatcher getMethodMatcher() {
 		// TODO Auto-generated method stub
 		return this;
 	}

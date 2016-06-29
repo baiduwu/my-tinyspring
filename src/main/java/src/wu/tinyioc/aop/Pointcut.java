@@ -5,5 +5,5 @@ import java.lang.reflect.Method;
 public interface Pointcut {
 
 	ClassFilter getClassFilter();
-	MethodMatcher gerMethodmatcher();
+	MethodMatcher getMethodMatcher();
 }
